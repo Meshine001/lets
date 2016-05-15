@@ -415,11 +415,15 @@ $system['db']['active_group'] = 'default';
  * mysql数据库配置示例,如果用mysqli，把下面的dbdriver驱动由mysql改成mysqli即可
  */
 $system['db']['default']['dbdriver'] = "mysql";
-$system['db']['default']['hostname'] = '127.0.0.1';
+//$system['db']['default']['hostname'] = '127.0.0.1';
+$system['db']['default']['hostname'] = 'sql100.byethost7.com';
 $system['db']['default']['port'] = '3306';
-$system['db']['default']['username'] = 'root';
-$system['db']['default']['password'] = '';
-$system['db']['default']['database'] = 'letsdb';
+//$system['db']['default']['username'] = 'root';
+$system['db']['default']['username'] = 'b7_17963048';
+//$system['db']['default']['password'] = '';
+$system['db']['default']['password'] = 'shyboy123';
+//$system['db']['default']['database'] = 'letsdb';
+$system['db']['default']['database'] = 'b7_17963048_lets_db';
 $system['db']['default']['dbprefix'] = '';
 $system['db']['default']['pconnect'] = FALSE;
 $system['db']['default']['db_debug'] = TRUE;
