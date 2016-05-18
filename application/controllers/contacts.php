@@ -28,7 +28,6 @@ class Contacts extends MpController{
      */
     function doGet(){
         $username = $this->input->get("username");
-        $this->input->get("ckattempt");
         $this->db->select("*");
         $this->db->from("t_contacts");
         $this->db->where("username",$username);
