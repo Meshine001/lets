@@ -464,6 +464,6 @@ $system['db']['pdo_mysql']['stricton'] = FALSE;
  * -------------------------数据库配置结束--------------------------
  */
 /* End of file index.php */
-include('MicroPHP.min.php');
+include('MicroPHP.php');
 MpRouter::setConfig($system);
 MpRouter::loadClass();
