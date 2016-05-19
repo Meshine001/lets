@@ -2753,6 +2753,7 @@ class MpController extends WoniuController
 
     public function response($code = 0,$data = null){
         //header('Content-type: application/json');
+        header( 'Content-Type:text/html;charset=utf-8 ');
         $response = Array(
             'code'=>$code,
             'data'=>$data
@@ -2763,6 +2764,7 @@ class MpController extends WoniuController
 
     public function errResponse($code=-1,$message = null){
         //header('Content-type: application/json');
+        header( 'Content-Type:text/html;charset=utf-8 ');
         $response = Array(
             'code'=>$code,
             'message'=>$message

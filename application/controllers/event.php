@@ -45,9 +45,10 @@ class Event extends MpController
 
         if ($data != null) {
             //add to mysql
-            $query = $this->db->insert("t_event", $data);
+            $data["createTime"] = time();
+            $this->db->insert("t_event", $data);
 
-            $this->response(0,"发起获得成功");
+            $this->response(0,"发起活动成功");
 
         }else{
             $this->errResponse(-1,"请求数据为空");
