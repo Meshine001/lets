@@ -9,17 +9,21 @@
 class User extends MpController
 {
 
-
-    public function doSignIn(){
-        $userId = $this->input->post("userId");
+    /**
+     * Add new user
+     */
+    public function doSignUp(){
         $username = $this->input->post("username");
         $password = $this->input->post("password");
-        $url = $this->config('jpushRegist');
         $data = array(
             'username'=>$username,
             'password'=>$password
         );
-        $this->db->insert("t_user",$data);
-        $this->response(0,"添加用户成功");
+        try {
+            $this->db->insert("t_user", $data);
+            $this->response(0, "添加用户成功");
+        } catch (Exception $e) {
+            $this->response(-1,$e);
+        }
     }
 }
