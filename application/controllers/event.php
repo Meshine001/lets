@@ -10,7 +10,7 @@
 class Event extends MpController
 {
 
-    public function doGetNewest()
+     function doGetNewest()
     {
         $query = $this->db->order_by("id", "desc")
             ->get("t_event", 20, 0);
@@ -18,17 +18,25 @@ class Event extends MpController
 
     }
 
-    public function doGetHotest()
+     function doGetHotest()
     {
         $query = $this->db->order_by("already", "desc")
             ->get("t_event", 20, 0);
         $this->response(0,$query->result_array());
     }
 
+    function doGetRecommend(){
+        $query = $this->db->order_by("id", "desc")
+            ->get("t_event", 20, 0);
+        $this->response(0,$query->result_array());
+    }
+
+
+
     /**
      * get the special events of the type
      */
-    public function doGet()
+     function doGet()
     {
         $type = $this->input->get("eventType");
         $limit = $this->input->get("limit");
@@ -39,7 +47,7 @@ class Event extends MpController
 
     }
 
-    public function doAdd()
+     function doAdd()
     {
         $data = (array)json_decode($this->input->post('data', null, false), true);
 
